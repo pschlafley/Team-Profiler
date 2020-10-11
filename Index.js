@@ -164,7 +164,7 @@ const questions = {
 
         {
             type: 'input',
-            name: 'schoolName',
+            name: 'school',
             message: "What is the Intern's school called? \n",
             validat: value => {
                 if(value) {
@@ -198,7 +198,7 @@ const addManager = () => {
 const addIntern = () => {
     return inquirer.prompt(questions.intern)
     .then(answers => {
-        const intern = new Intern(answers.name, answers.id, answers.email, answers.schoolName);
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         employees.push(intern);
         addEmployee();
     })
